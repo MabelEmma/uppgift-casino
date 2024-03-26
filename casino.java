@@ -5,6 +5,87 @@ import java.util.Scanner;
 
 public class casino {
 	
+	public static void main(String[]args) {
+		System.out.println("Hello sisters! Welcome to our partyHouse");
+		
+		//Objekt av scanner
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Skriv in ditt namn: ");
+		String namn = scanner.nextLine();
+		
+		System.out.println("Skriv in ditt saldo: ");
+		int saldo = scanner.nextInt();
+		
+		//Objekt av player
+		Player player = new Player(namn, saldo);
+		
+		System.out.println("Välkommen " + player.namn + ". Du har " + player.getBalance() + " kronor!");
+		
+		
+		System.out.println("Vilket spel vill du spela?");
+		System.out.println("1. Roulette");
+		System.out.println("2. WheelOfFortune");
+		int spel = scanner.nextInt();
+		
+		switch(spel) {
+		case(1):
+			Roulette roulette = new Roulette();
+		
+			System.out.println("Hur mycket pengar vill du satsa? ");
+			int moneyInput = scanner.nextInt();
+			System.out.println("Vilken siffra vill du satsa på? ");
+			int numberInput = scanner.nextInt();
+			scanner.nextLine();
+			System.out.println("Vilken färg vill du satsa på? ");
+			String colorInput = scanner.nextLine();
+			
+			player.newBalance(moneyInput * -1);
+			int result = roulette.bet(moneyInput, numberInput, colorInput);
+			
+			if(result == 0) {
+				System.out.println("Du har förlorat.");
+			} else {
+				System.out.println("Du har vunnit!!!!");
+			}
+			
+			player.newBalance(result);
+			System.out.println("Ditt nya saldo är " + player.getBalance() + " kronor!");
+
+		
+			break;
+		case(2):
+			break;
+		default:
+			break;
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+	
+	/*
 	int num;
 	int vinst = num*2;
 	
@@ -76,14 +157,8 @@ public class casino {
 	        
 	        System.out.println("Test");
 
-    }
-		
-		
-		
-		
-		
-		
-	}
+    }*/
+	
 	
 	
 	

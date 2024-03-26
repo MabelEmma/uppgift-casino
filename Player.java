@@ -17,8 +17,13 @@ public class Player {
 	}
 	
 	//Metod för att hämta saldo
-	public double getBalance() {
+	public int getBalance() {
 		return saldo;
+	}
+	
+	//Metod för att beräkna nytt saldo
+	public void newBalance(int balanceChange) {
+		this.saldo = this.saldo + balanceChange;
 	}
 	
 	
