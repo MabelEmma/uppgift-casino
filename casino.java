@@ -1,6 +1,8 @@
 package fk.examples.onlinecasino;
 import java.util.Scanner;
 
+
+
 public class casino {
 	
 	int num;
@@ -60,19 +62,20 @@ public class casino {
         	else {
         		System.out.println("Tyvärr, du hade fel. BUHU");
         	}
-
+        
+        break;
         }
         else {
         	System.out.println("Vad tråkigt, vi ses nästa gång!");
-        	continue;
+        break;
+        	
         }
         
-        scanner.close(); // Stäng Scanner när den inte längre behövs
+		}    
+	        scanner.close(); // Stäng Scanner när den inte längre behöver
+	        
+	        System.out.println("Test");
 
-       
-        
-        
-		 }    
     }
 		
 		
